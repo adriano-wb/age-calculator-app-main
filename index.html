@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+		
+		<title>Frontend Mentor | Age calculator app</title>
+		<link rel="stylesheet" href="assets/css/estilo.css">
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+		</style>
+	</head>
+	<body>
+		<main class="principal">
+			<div class="container">
+				<!-- Formulário para inserção de dia, mês e ano -->
+				<form class="form">
+					<div class="form-container">
+					
+						<!-- Container que abriga o campo de entrada referente ao dia -->
+						<div class="form-item">
+							<label for="dia" class="form-item__label">Day</label>
+							<input type="text" class="form-item__input" name="day" maxlength="2" id="dia" placeholder="DD">
+						</div>
+						
+						<!-- Container que abriga o campo de entrada referente ao mês -->
+						<div class="form-item">
+							<label for="mes" class="form-item__label">Month</label>
+							<input type="text" class="form-item__input" name="month" maxlength="2" id="mes" placeholder="MM">
+						</div>
+						
+						<!-- Container que abriga o campo de entrada referente ao ano -->
+						<div class="form-item">
+							<label for="ano" class="form-item__label">Year</label>
+							<input type="text" class="form-item__input" name="year" maxlength="4" id="ano" placeholder="YYYY">
+						</div>
+					</div>
+					<p id="form-error"><i>Must be a valid date</i></p>
+					<button type="button" class="form-button">
+						<img src="assets/images/icon-arrow.svg" class="form-button__icon" alt="">
+					</button>
+				</form>
+				
+				<!-- Parte de exibição do resultado da quantidade de dia, mês e ano da data 
+						 escolhida acima até o dia, o mês e o ano atual -->
+				<div class="result">
+					<p class="result-text" id="yrs"><span class="result-text__data">--</span> years</p>
+					<p class="result-text" id="mth"><span class="result-text__data">--</span> months</p>
+					<p class="result-text" id="day"><span class="result-text__data">--</span> days</p>
+				</div>
+			</div>
+		</main>
+		<div class="attribution">
+			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+			Coded by <a href="#">Adriano</a>.
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>
