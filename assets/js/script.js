@@ -21,7 +21,7 @@ $(() => {
 		if (!$inptDay.val()) {
 			$formMsgErrorDia.find("i").text("This field is required");
 			$formMsgErrorDia.show();
-			$inptDay.addClass("form-item__input--error");	
+			$inptDay.addClass("form-item__input--error");
 			$labelDay.addClass("form-item__label--error");
 		} else {
 			if ($inptDay.val() > 31 || $inptDay.val() < 1) {
