@@ -92,12 +92,13 @@ input {
 	border-color: var(--purple);
 }
 
-#form-error {
+.form-error-dia,
+.form-error-mes,
+.form-error-ano {
 	color: var(--lightRed);
 	display: none;
-	font-size: 0.90rem;
-	margin-top: -28px;
-	margin-bottom: 7px;
+	font-size: 0.83rem;
+	margin-top: 4px;
 }
 
 .form-button {
@@ -159,7 +160,7 @@ input {
 
 @media screen and (min-width: 600px) {
 	body {
-		/* background: url("../../design/desktop-error-whole-form.jpg"); */
+		/* background: url("../../design/desktop-error-whole-form.jpg");
 		/* background: url("../../design/desktop-design.jpg"); */
 	}
 	
@@ -192,8 +193,11 @@ input {
 		padding: 11px 22px;
 	} 
 
-	#form-error {
+	.form-error-dia,
+	.form-error-mes,
+	.form-error-ano {
 		margin-top: 7px;
+		font-size: 16px;
 	}
 	
 	.form-button {
