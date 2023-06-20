@@ -15,9 +15,19 @@ $(() => {
 	const $formMsgErrorDia = $(".form-error-dia");
 	const $formMsgErrorMes = $(".form-error-mes");
 	const $formMsgErrorAno = $(".form-error-ano");
-	const $date = new Date();
 	
 	function validateForm() {
+		let calcYrs = undefined;
+		let calcMth = undefined;
+		let calcDys = undefined;
+		const $initialDate = new Date($inptYear.val(), $inptMonth.val(), $inptDay.val());
+		const $currentDate = new Date();
+		const diferenca = $currentDate - $initialDate;
+		const milissegundosPorDia = 1000 * 60 * 60 * 24;
+		const diasPassados = Math.floor(diferenca / milissegundosPorDia);
+		const mesesPassados = Math.floor(diasPassados / 30.436875); // Média de dias em um mês
+		const anosPassados = Math.floor(mesesPassados / 12);
+		
 		if (!$inptDay.val()) {
 			$formMsgErrorDia.find("i").text("This field is required");
 			$formMsgErrorDia.show();
@@ -34,7 +44,7 @@ $(() => {
 					$formMsgErrorDia.hide();
 					$inptDay.removeClass("form-item__input--error");	
 					$labelDay.removeClass("form-item__label--error");
-					exibirDay.text($inptDay.val());
+					exibirDay.text(diasPassados);
 					exibirDay.addClass("result-text__data--preenchido");
 				}
 			}
@@ -56,7 +66,7 @@ $(() => {
 					$formMsgErrorMes.hide();
 					$inptMonth.removeClass("form-item__input--error");	
 					$labelMes.removeClass("form-item__label--error");
-					exibirMth.text($inptMonth.val());
+					exibirMth.text(mesesPassados);
 					exibirMth.addClass("result-text__data--preenchido");
 				}
 			}
@@ -68,7 +78,7 @@ $(() => {
 			$inptYear.addClass("form-item__input--error");	
 			$labelYear.addClass("form-item__label--error");
 		} else {
-			if ($inptYear.val() > $date.getFullYear() || $inptYear.val() < 1) {
+			if ($inptYear.val() > $currentDate.getFullYear() || $inptYear.val() < 1) {
 				$formMsgErrorAno.find("i").text("Must be in the past");
 				$formMsgErrorAno.show();
 				$inptYear.addClass("form-item__input--error");	
@@ -77,7 +87,7 @@ $(() => {
 				$formMsgErrorAno.hide();
 				$inptYear.removeClass("form-item__input--error");	
 				$labelYear.removeClass("form-item__label--error");
-				exibirYrs.text($inptYear.val().slice($inptYear.val().length-2));
+				exibirYrs.text(anosPassados);
 				exibirYrs.addClass("result-text__data--preenchido");
 			}
 		}
