@@ -9,17 +9,11 @@ $(() => {
 	const exibirYrs = $(".result-text__data").eq(0);
 	const exibirMth = $(".result-text__data").eq(1);
 	const exibirDay = $(".result-text__data").eq(2);
-	const $inptDayValue = $inptDay.val();
-	const $inptMonthValue = $inptMonth.val();
-	const $inptYearValue = $inptYear.val();
 	const $formMsgErrorDia = $(".form-error-dia");
 	const $formMsgErrorMes = $(".form-error-mes");
 	const $formMsgErrorAno = $(".form-error-ano");
 	
 	function validateForm() {
-		let calcYrs = undefined;
-		let calcMth = undefined;
-		let calcDys = undefined;
 		const $initialDate = new Date($inptYear.val(), $inptMonth.val(), $inptDay.val());
 		const $currentDate = new Date();
 		const diferenca = $currentDate - $initialDate;
