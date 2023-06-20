@@ -12,50 +12,83 @@ $(() => {
 	const $inptDayValue = $inptDay.val();
 	const $inptMonthValue = $inptMonth.val();
 	const $inptYearValue = $inptYear.val();
-	const $formMsgError = $("#form-error");
+	const $formMsgErrorDia = $(".form-error-dia");
+	const $formMsgErrorMes = $(".form-error-mes");
+	const $formMsgErrorAno = $(".form-error-ano");
 	const $date = new Date();
 	
 	function validateForm() {
-		
-		if (!$inptDay.val() || !($inptDay.val() >= 1 && $inptDay.val() <= 31) || 
-				$inptDay.val() == 31 && $inptMonth.val() != 2) {
-			$formMsgError.show('slow');
+		if (!$inptDay.val()) {
+			$formMsgErrorDia.find("i").text("This field is required");
+			$formMsgErrorDia.show();
 			$inptDay.addClass("form-item__input--error");	
 			$labelDay.addClass("form-item__label--error");
 		} else {
-			$formMsgError.hide('slow');
-			$inptDay.removeClass("form-item__input--error");	
-			$labelDay.removeClass("form-item__label--error");
-			exibirDay.text($inptDay.val());
-			exibirDay.addClass("result-text__data--preenchido");
+			if ($inptDay.val() > 31 || $inptDay.val() < 1) {
+				$formMsgErrorDia.find("i").text("Must be a valid day");
+				$formMsgErrorDia.show();
+				$inptDay.addClass("form-item__input--error");	
+				$labelDay.addClass("form-item__label--error");
+			} else {
+				$formMsgErrorDia.hide();
+				$inptDay.removeClass("form-item__input--error");	
+				$labelDay.removeClass("form-item__label--error");
+				exibirDay.text($inptDay.val());
+				exibirDay.addClass("result-text__data--preenchido");
+			}
 		}
 		
-		 if (!$inptMonth.val() || !($inptMonth.val() >= 1 && $inptMonth.val() <= 12) || 
-				$inptDay.val() == 31 && $inptMonth.val() != 2) {
-			$formMsgError.show('slow');
+		if (!$inptMonth.val()) {
+			$formMsgErrorMes.find("i").text("This field is required");
+			$formMsgErrorMes.show();
 			$inptMonth.addClass("form-item__input--error");	
 			$labelMes.addClass("form-item__label--error");
 		} else {
-			$formMsgError.hide('slow');
-			$inptMonth.removeClass("form-item__input--error");	
-			$labelMes.removeClass("form-item__label--error");
-			exibirMth.text($inptMonth.val());
-			exibirMth.addClass("result-text__data--preenchido");
+			if ($inptMonth.val() > 12 || $inptMonth.val() < 1) {
+				$formMsgErrorMes.find("i").text("Must be a valid day");
+				$formMsgErrorMes.show();
+				$inptMonth.addClass("form-item__input--error");	
+				$labelMes.addClass("form-item__label--error");
+			} else {
+				$formMsgErrorMes.hide();
+				$inptMonth.removeClass("form-item__input--error");	
+				$labelMes.removeClass("form-item__label--error");
+				exibirMth.text($inptMonth.val());
+				exibirMth.addClass("result-text__data--preenchido");
+			}
 		}
 		
-		if (!$inptYear.val() || $inptYear.val() > $date.getFullYear() || 
-				$inptDay.val() == 31 && $inptMonth.val() != 2) {
-					
-			$formMsgError.show('slow');
+		if (!$inptYear.val()) {
+			$formMsgErrorAno.find("i").text("This field is required");
+			$formMsgErrorAno.show();
 			$inptYear.addClass("form-item__input--error");	
 			$labelYear.addClass("form-item__label--error");
 		} else {
-			$formMsgError.hide('slow');
-			$inptYear.removeClass("form-item__input--error");	
-			$labelYear.removeClass("form-item__label--error");
-			exibirYrs.text($inptYear.val().slice($inptYear.val().length-2));
-			exibirYrs.addClass("result-text__data--preenchido");
-		} 
+			if ($inptYear.val() > $date.getFullYear() || $inptYear.val() < 1) {
+				$formMsgErrorAno.find("i").text("Must be in the past");
+				$formMsgErrorAno.show();
+				$inptYear.addClass("form-item__input--error");	
+				$labelYear.addClass("form-item__label--error");
+			} else {
+				$formMsgErrorAno.hide();
+				$inptYear.removeClass("form-item__input--error");	
+				$labelYear.removeClass("form-item__label--error");
+				exibirYrs.text($inptYear.val().slice($inptYear.val().length-2));
+				exibirYrs.addClass("result-text__data--preenchido");
+			}
+		}
+		
+		if ($inptDay.val() > 30 && $inptMonth.val() != 2) {
+			$formMsgErrorDia.find("i").text("Must be a valid date");
+			$formMsgErrorDia.show();
+			$inptDay.addClass("form-item__input--error");	
+			$labelDay.addClass("form-item__label--error");
+			$inptMonth.addClass("form-item__input--error");	
+			$labelMes.addClass("form-item__label--error");
+			$inptYear.addClass("form-item__input--error");	
+			$labelYear.addClass("form-item__label--error");
+		}
 	}
+	
 	$inptBtn.on("click", validateForm);
 })
