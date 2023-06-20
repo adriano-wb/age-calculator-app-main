@@ -30,11 +30,13 @@ $(() => {
 				$inptDay.addClass("form-item__input--error");	
 				$labelDay.addClass("form-item__label--error");
 			} else {
-				$formMsgErrorDia.hide();
-				$inptDay.removeClass("form-item__input--error");	
-				$labelDay.removeClass("form-item__label--error");
-				exibirDay.text($inptDay.val());
-				exibirDay.addClass("result-text__data--preenchido");
+				if (!($inptDay.val() > 30 && $inptMonth.val() != 2)) {
+					$formMsgErrorDia.hide();
+					$inptDay.removeClass("form-item__input--error");	
+					$labelDay.removeClass("form-item__label--error");
+					exibirDay.text($inptDay.val());
+					exibirDay.addClass("result-text__data--preenchido");
+				}
 			}
 		}
 		
@@ -50,11 +52,13 @@ $(() => {
 				$inptMonth.addClass("form-item__input--error");	
 				$labelMes.addClass("form-item__label--error");
 			} else {
-				$formMsgErrorMes.hide();
-				$inptMonth.removeClass("form-item__input--error");	
-				$labelMes.removeClass("form-item__label--error");
-				exibirMth.text($inptMonth.val());
-				exibirMth.addClass("result-text__data--preenchido");
+				if (!($inptDay.val() > 30 && $inptMonth.val() != 2)) {
+					$formMsgErrorMes.hide();
+					$inptMonth.removeClass("form-item__input--error");	
+					$labelMes.removeClass("form-item__label--error");
+					exibirMth.text($inptMonth.val());
+					exibirMth.addClass("result-text__data--preenchido");
+				}
 			}
 		}
 		
