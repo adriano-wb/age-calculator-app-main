@@ -22,22 +22,24 @@
 						<!-- Container que abriga o campo de entrada referente ao dia -->
 						<div class="form-item">
 							<label for="dia" class="form-item__label">Day</label>
-							<input type="text" class="form-item__input" name="day" maxlength="2" id="dia" placeholder="DD">
+							<input type="text" class="form-item__input" name="day" required maxlength="2" id="dia" placeholder="DD">
+							<p class="form-error-dia"><i>Must be a valid date</i></p>
 						</div>
 						
 						<!-- Container que abriga o campo de entrada referente ao mês -->
 						<div class="form-item">
 							<label for="mes" class="form-item__label">Month</label>
-							<input type="text" class="form-item__input" name="month" maxlength="2" id="mes" placeholder="MM">
+							<input type="text" class="form-item__input" name="month" required maxlength="2" id="mes" placeholder="MM">
+							<p class="form-error-mes"><i>Must be a valid date</i></p>
 						</div>
 						
 						<!-- Container que abriga o campo de entrada referente ao ano -->
 						<div class="form-item">
 							<label for="ano" class="form-item__label">Year</label>
-							<input type="text" class="form-item__input" name="year" maxlength="4" id="ano" placeholder="YYYY">
+							<input type="text" class="form-item__input" name="year" required maxlength="4" id="ano" placeholder="YYYY">
+							<p class="form-error-ano"><i>Must be a valid date</i></p>
 						</div>
 					</div>
-					<p id="form-error"><i>Must be a valid date</i></p>
 					<button type="button" class="form-button">
 						<img src="assets/images/icon-arrow.svg" class="form-button__icon" alt="">
 					</button>
