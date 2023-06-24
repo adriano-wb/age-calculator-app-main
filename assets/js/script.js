@@ -86,7 +86,7 @@ $(() => {
 			}
 		}
 		
-		if ($inptDay.val() > 30 && $inptMonth.val() != 2) {
+		if ($inptDay.val() > 30 && $inptMonth.val() === 2) {
 			$formMsgErrorDia.find("i").text("Must be a valid date");
 			$formMsgErrorDia.show();
 			$inptDay.addClass("form-item__input--error");	
