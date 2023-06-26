@@ -39,15 +39,15 @@ Os usuários devem ser capazes de:
 
 ### Links
 
-- Solução URL: [Add solution URL here](https://github.com/adriano-wb/age-calculator-app-main)
-- Site URL: [Add live site URL here](https://adriano-wb.github.io/age-calculator-app-main/)
+- Solução URL: [https://github.com/adriano-wb/age-calculator-app-main](https://github.com/adriano-wb/age-calculator-app-main)
+- Site URL: [https://adriano-wb.github.io/age-calculator-app-main/](https://adriano-wb.github.io/age-calculator-app-main/)
 
 ## Meu processo
 Utilizei HTML5 seguindo os padrões recomendados pela W3C para acessibilidade e uso adequado das tags, atributos e comentários. Em CSS utilizei nomes de classes usando a metodologia BEM(Block Element Modifier) para uma melhor comprenssão facilitando assim a depuração, atualização e reutilização de código. Em JavaScript utilizei a biblioteca jQuery muito utilizada para facilitar a maneira de acessar o DOM(Document Object Model) e no uso de animações.
 
 ### Criado com
 
-- Marcação HTML5 semântica
+- marcação HTML5 semântica
 - CSS propriedades customizadas
 - Flexbox
 - CSS Grid
