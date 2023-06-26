@@ -47,7 +47,7 @@ Utilizei HTML5 seguindo os padrões recomendados pela W3C para acessibilidade e 
 
 ### Criado com
 
-- marcação HTML5 semântica
+- Marcação HTML5 semântica
 - CSS propriedades customizadas
 - Flexbox
 - CSS Grid
